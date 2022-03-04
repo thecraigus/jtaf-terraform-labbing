@@ -6,6 +6,10 @@ terraform {
     }
   }
 }
+
+variable "srx2addrbook" {
+  description = "Name of the VPC"
+}
 // To test Terraform's ability to remove a single resource,
 // comment out one resource below and use `terraform taint` on the commit
 // resource so that an apply also applies the commit.
@@ -14,7 +18,7 @@ resource "junos-vsrx_SecurityAddress__BookAddressIp__Prefix" "vsrx_7" {
   resource_name = "vsrx_7"
   name          = "global"
   name__1       = "fw-2-dan5"
-  ip__prefix    = "11.0.59.0/24"
+  ip__prefix    = var.srx2addrbook
 }
 
 # resource "junos-vsrx_commit" "commit2" {

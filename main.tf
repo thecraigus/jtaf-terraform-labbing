@@ -24,12 +24,17 @@ provider "junos-vsrx" {
   sshkey   = ""
 }
 
+
 module "vsrx_1" {
   source = "./vsrx_1"
 
   providers = { junos-vsrx = junos-vsrx }
 
   depends_on = [junos-vsrx_destroycommit.commit-main]
+
+  srx1addrbook = var.srx1prefix
+
+
 }
 
 module "vsrx_2" {
@@ -38,6 +43,8 @@ module "vsrx_2" {
   providers = { junos-vsrx = junos-vsrx.backbone }
 
   depends_on = [junos-vsrx_destroycommit.commit-main]
+
+  srx2addrbook = var.srx2prefix
 }
 
 resource "junos-vsrx_commit" "commit-main" {
