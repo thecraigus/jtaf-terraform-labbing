@@ -11,7 +11,7 @@ provider "junos-vsrx" {
   host     = "192.168.137.55"
   port     = 830
   username = "craig"
-  password = "Telecaster1!"
+  password = "Telecas!"
   sshkey   = ""
 }
 
@@ -20,7 +20,7 @@ provider "junos-vsrx" {
   host     = "192.168.137.56"
   port     = 830
   username = "craig"
-  password = "Telecaster1!"
+  password = "Telecas"
   sshkey   = ""
 }
 
